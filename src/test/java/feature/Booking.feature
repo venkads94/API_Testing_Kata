@@ -23,3 +23,11 @@ Examples:
 |username|password|
 |'admin1'|'password'|
 |'admin1'|'password1'|
+
+@Positive
+Scenario Outline: Create Booking
+When Build request payload <firstname>,<lastname>,<phone>,<email>,<checkin>,<checkout> and hit create booking endpoint
+Then Assert the positive response 200
+Examples:
+|firstname|lastname|phone|email|checkin|checkout|
+|'Sub'|'Kri'|'9095553431123'|'abc@gmail.com'|'2026-02-20'|'2026-02-21'|
