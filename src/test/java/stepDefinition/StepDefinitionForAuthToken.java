@@ -1,6 +1,5 @@
 package stepDefinition;
 
-import org.hamcrest.Matcher;
 import org.hamcrest.Matchers;
 import org.testng.Assert;
 import io.cucumber.java.en.*;
@@ -8,10 +7,10 @@ import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
-public class StepDefinitionClass {
+public class StepDefinitionForAuthToken {
 	
-	public static RequestSpecification inputRequest;
-	public static Response response;
+	public RequestSpecification inputRequest;
+	public Response response;
 	public String authToken;
 	
 	@Given("Declare base uri")
@@ -43,5 +42,11 @@ public class StepDefinitionClass {
 	public void assertResponseForAuthToken() {
 		response.then().assertThat().statusCode(Matchers.equalTo(200));
 		authToken = response.jsonPath().getString("token");
+	}
+	@Then("Assert the unthorized response code")
+	public void assertUnauthorizedResponseCode() {
+		response.then().assertThat().statusCode(Matchers.equalTo(401));
+		String errorMsg = response.jsonPath().getString("error");
+		Assert.assertEquals(errorMsg, "Invalid credentials");
 	}
 }
