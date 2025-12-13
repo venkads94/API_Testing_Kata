@@ -9,11 +9,7 @@ import io.restassured.specification.RequestSpecification;
 
 public class StepDefinitionForAuthToken extends BaseClass {
 	
-	@Given("Set value of base uri")
-	public void declareBaseURI() {
-		RestAssured.baseURI = "https://automationintesting.online/api";
-	}
-	
+	//GET Health Check
 	@When("Call Health Check endpoint")
 	public void healthCheck() {
 		response = RestAssured.get("/booking/actuator/health");
@@ -24,6 +20,7 @@ public class StepDefinitionForAuthToken extends BaseClass {
 		Assert.assertEquals(status, "UP");
 	}
 	
+	//POST Get Auth Token Positive Case
 	@When("Call Auth Token call by passing {string} and {string}")
 	public void getAuthToken(String uname, String pwd) {
 		String requestBody = "{"
@@ -39,6 +36,7 @@ public class StepDefinitionForAuthToken extends BaseClass {
 		response.then().assertThat().statusCode(Matchers.equalTo(200));
 		authToken = response.jsonPath().getString("token");
 	}
+	//POST Get Auth Token Negative Case
 	@Then("Check if status code is 401")
 	public void assertUnauthorizedResponseCode() {
 		response.then().assertThat().statusCode(Matchers.equalTo(401));
