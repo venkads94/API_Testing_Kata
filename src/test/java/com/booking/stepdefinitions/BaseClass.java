@@ -9,7 +9,8 @@ public class BaseClass {
 	public static RequestSpecification inputRequest;
 	public static Response response;
 	public static String authToken;
-	String errorMsg, bookingId;
+	public String errorMsg;
+	public static int bookingId;
 	
 	public String createRequestPayloadBody(String firstname, String lastname, String phone, String email, String checkin, String checkout) {
 		Map<String, Object> bookingDates = new HashMap<>();

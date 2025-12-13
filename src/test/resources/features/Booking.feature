@@ -43,3 +43,21 @@ Examples:
 |'SK'|'Kri'|'9095553431123'|'abc@gmail.com'|'2026-02-20'|'2026-02-21'|
 |'Sub'|'Krish'|'9095553431123'|'abcgmail.com'|'2026-02-20'|'2026-02-21'|
 |'Sub'|'Krish'|'9095553431'|'abc@gmail.com'|'2026-02-20'|'2026-02-21'|
+
+@Positive
+Scenario: Get Booking Details by Id
+When Call Get Booking Details by passing booking id
+Then Validate if status code is 200
+
+@Negative
+Scenario: Get Booking Details by Id Negative Scenario
+When Call Get Booking Details by passing invalid token
+Then Validate if status code is 403
+
+@Positive
+Scenario Outline: Update Booking Details
+When Create payload by passing <firstname>,<lastname>,<phone>,<email>,<checkin>,<checkout> and call PUT endpoint
+Then Validate if status code is 200
+Examples:
+|firstname|lastname|phone|email|checkin|checkout|
+|'Sub'|'Kri'|'9095553431123'|'abc@gmail.com'|'2026-03-20'|'2026-03-21'|

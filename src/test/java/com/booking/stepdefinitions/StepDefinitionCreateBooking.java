@@ -30,14 +30,14 @@ public class StepDefinitionCreateBooking extends BaseClass {
 
 		String requestPayload = createRequestPayloadBody(firstName, lastName, phone, email, checkIn, checkOut);
 		System.out.println(requestPayload);
-		inputRequest = RestAssured.given().cookie(authToken).when().body(requestPayload);
+		inputRequest = RestAssured.given().cookie("token",authToken).when().body(requestPayload);
 		response = inputRequest.post("/booking");
 	}
 
 	@Then("Validate if status code is 201")
 	public void validateStatusCode() {
 		response.then().assertThat().statusCode(Matchers.equalTo(201));
-		bookingId = response.jsonPath().getString("bookingid");
+		bookingId = response.jsonPath().getInt("bookingid");
 	}
 
 	// POST Create Booking - Negative Scenario
