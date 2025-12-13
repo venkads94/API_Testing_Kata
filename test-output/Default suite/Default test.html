@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>8/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>10/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Sun Dec 14 01:20:34 IST 2025</td>
+<td>Started on:</td><td>Sun Dec 14 02:11:34 IST 2025</td>
 </tr>
-<tr><td>Total time:</td><td>20 seconds (20859 ms)</td>
+<tr><td>Total time:</td><td>20 seconds (20714 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -103,10 +103,10 @@ Expected status code &lt;400&gt; but was &lt;201&gt;.
 	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
 	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:135)
 	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:84)
-	at com.booking.stepdefinitions.StepDefinitionCreateBooking.validateStatusCodeNegativeScenario(StepDefinitionCreateBooking.java:57)
+	at com.booking.stepdefinitions.StepDefinitionCreateBooking.validateStatusCodeNegativeScenario(StepDefinitionCreateBooking.java:63)
 	at ✽.Validate if status code is 400(file:///C:/Users/Dell/Kata/API_Testing_kata/src/test/resources/features/Booking.feature:39)
-</pre></div><a href='#' onClick='toggleBox("stack-trace773512559", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace773512559'><pre>java.lang.AssertionError: 1 expectation failed.
+</pre></div><a href='#' onClick='toggleBox("stack-trace1037732398", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1037732398'><pre>java.lang.AssertionError: 1 expectation failed.
 Expected status code &lt;400&gt; but was &lt;201&gt;.
 
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
@@ -133,7 +133,7 @@ Expected status code &lt;400&gt; but was &lt;201&gt;.
 	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
 	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:135)
 	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:84)
-	at com.booking.stepdefinitions.StepDefinitionCreateBooking.validateStatusCodeNegativeScenario(StepDefinitionCreateBooking.java:57)
+	at com.booking.stepdefinitions.StepDefinitionCreateBooking.validateStatusCodeNegativeScenario(StepDefinitionCreateBooking.java:63)
 	at ✽.Validate if status code is 400(file:///C:/Users/Dell/Kata/API_Testing_kata/src/test/resources/features/Booking.feature:39)
 </pre></div></td>
 <td>0</td>
@@ -149,15 +149,10 @@ Expected status code &lt;400&gt; but was &lt;201&gt;.
 <tr>
 <td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Get Authentication Token Negative Scenario", "Optional[Hotel Booking]"</td>
 <td></td>
-<td>1</td>
+<td>0</td>
 <td>runner.TestRunner@66f57048</td></tr>
 <tr>
 <td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Create Booking", "Optional[Hotel Booking]"</td>
-<td></td>
-<td>1</td>
-<td>runner.TestRunner@66f57048</td></tr>
-<tr>
-<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Message", "Optional[Get messages]"</td>
 <td></td>
 <td>1</td>
 <td>runner.TestRunner@66f57048</td></tr>
@@ -165,6 +160,16 @@ Expected status code &lt;400&gt; but was &lt;201&gt;.
 <td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Create Booking", "Optional[Hotel Booking]"</td>
 <td></td>
 <td>0</td>
+<td>runner.TestRunner@66f57048</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Create Booking", "Optional[Hotel Booking]"</td>
+<td></td>
+<td>0</td>
+<td>runner.TestRunner@66f57048</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Message", "Optional[Get messages]"</td>
+<td></td>
+<td>1</td>
 <td>runner.TestRunner@66f57048</td></tr>
 <tr>
 <td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Get Authentication Token", "Optional[Hotel Booking]"</td>
@@ -182,9 +187,14 @@ Expected status code &lt;400&gt; but was &lt;201&gt;.
 <td>0</td>
 <td>runner.TestRunner@66f57048</td></tr>
 <tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Create Booking", "Optional[Hotel Booking]"</td>
+<td></td>
+<td>0</td>
+<td>runner.TestRunner@66f57048</td></tr>
+<tr>
 <td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Health Check", "Optional[Hotel Booking]"</td>
 <td></td>
-<td>9</td>
+<td>8</td>
 <td>runner.TestRunner@66f57048</td></tr>
 </table><p>
 </body>

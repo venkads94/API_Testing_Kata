@@ -42,5 +42,4 @@ Examples:
 |firstname|lastname|phone|email|checkin|checkout|
 |'SK'|'Kri'|'9095553431123'|'abc@gmail.com'|'2026-02-20'|'2026-02-21'|
 |'Sub'|'Krish'|'9095553431123'|'abcgmail.com'|'2026-02-20'|'2026-02-21'|
-
-
+|'Sub'|'Krish'|'9095553431'|'abc@gmail.com'|'2026-02-20'|'2026-02-21'|
