@@ -45,4 +45,29 @@ public class StepDefinitionUpdateBooking extends BaseClass {
 		System.out.println("PUT payload:"+json);
 		response = RestAssured.given().cookie("token",authToken).contentType("application/json").when().body(json).put("/booking/"+bookingId);
 	}
+
+	//PUT Update Booking Details with missing token - Negative Scenario
+	@When("Create payload by passing {string},{string},{string},{string},{string},{string} and call PUT endpoint with empty token")
+	public void updateBookingWithMissingToken(String firstName, String lastName, String phone, String email, String checkIn, String checkOut) {
+		String json = "{"
+	            + "\"roomid\":901,"
+	            + "\"depositpaid\":true,"
+	            + "\"firstname\":\""+firstName+"\","
+	            + "\"lastname\":\""+lastName+"\","
+	            + "\"email\":\""+email+"\","
+	            + "\"phone\":\"90955567378212\","
+	            + "\"bookingdates\":{"
+	            + "\"checkin\":\""+checkIn+"\","
+	            + "\"checkout\":\""+checkOut+"\""
+	            + "}"
+	            + "}";
+		System.out.println("PUT payload:"+json);
+		response = RestAssured.given().contentType("application/json").when().body(json).put("/booking/"+bookingId);
+	}
+	@Then("Validate if status code is 401")
+	public void validateAuthErrorResponse() {
+		response.then().assertThat().statusCode(Matchers.equalTo(401));
+		String errorMessage = response.jsonPath().getString("error");
+		Assert.assertEquals(errorMessage, "Authentication required");
+	}
 }
