@@ -1,67 +1,66 @@
-# Kata API Testing in Java
+# API Automation Framework (Cucumber + Rest Assured)
 
-API Testing and Java Exercise: Setting up a Basic API Test Automation Framework.
+This project is an API automation framework built using **Cucumber (v7.0.0)** and **Rest Assured (v5.4.0)**.  
+It is developed in **Eclipse IDE** and targets the APIs hosted at:
 
-## Objective
-The objective of this exercise is to evaluate your knowledge on API testing and Java by setting up a basic API Test Automation framework using Rest-Assured and Cucumber. You will need to create a test suite that executes a few tests against one endpoint of a hotel booking website and evaluates their responses.
+**Base URI:** `https://automationintesting.online/api`
 
-## Background
-The application under test is a simple hotel booking website where you can book a room and also send a form with a request.
+---
 
-The website can be accessed at https://automationintesting.online/.
+## 📌 Features
+- BDD-style test scenarios using **Cucumber**.
+- API testing with **Rest Assured**.
+- Supports multiple HTTP methods: `GET`, `POST`, `PUT`.
+- Easily extendable for additional endpoints.
+- Generates Cucumber HTML reports.
 
-The Swagger documentation for the two endpoints you will be testing can be found at:
+---
 
-Booking endpoint: https://automationintesting.online/booking/swagger-ui/index.html  
-Optionally, you also have the Authentican endpoint: https://automationintesting.online/auth/swagger-ui/index.html
+## 🔧 Dependencies
+- Java 11+
+- Maven
+- Cucumber 7.0.0
+- Rest Assured 5.4.0
+- JUnit/TestNG (depending on runner configuration)
 
-### Swagger
-This website is an external application which is not in our control.  
-We noticed that the Swagger documentation is sometimes not available on the mentioned URL above.  
-As a backup, you can find the Swagger documentation in this repository at [src/test/resources/spec/booking.yaml](src/test/resources/spec/booking.yaml)
+---
 
-The Open API Spec file is only supported in the Ultimate version of IntelliJ IDEA. But you can copy the content of the file and paste it in an online Swagger editor like https://editor.swagger.io/ to visualize the API documentation.
+## 🚀 Endpoints Covered
+- **Health Check**
+  - `GET /booking/actuator/health`
+- **Authentication**
+  - `POST /auth/login`
+- **Create Booking** 
+  - `POST /booking`
+- **Get Booking by ID**
+  - `GET /booking/{bookingId}`
+- **Update Booking**
+  - `PUT /booking/{bookingId}`
 
-### Authentication
-In order to authenticate yourself, the required credentials are:
-* Username: `admin`
-* Password: `password`
+---
 
-## Task
-You are provided with an extremely basic API test project.
+## ▶️ How to Run Tests
+1. Clone the repository:
+   ```bash
+   git clone <repo-url>
+2. Navigate to project directory:
+   cd api-automation-framework
+3. Run test using Maven:
+   mvn clean test
+4. View reports:
+   - Reports are generated under target/cucumber-reports.
+   
+Sample Feature File:
+Feature: Booking API Tests
+Scenario: Verify health check endpoint
+Given the API is available    
+When I send a GET request to "/booking/actuator/health"
+Then the response status code should be 200
 
-Please clone the project and create a new branch with your name. At the end, please push your branch to this project.
-
-The project to start from, can be found here: https://github.com/freddyschoeters/API_Testing_kata
-
-Your task is to set up an API Test Automation framework from this project using Java, Rest-Assured, and Cucumber (feel free to add more dependencies if required).
-
-It is up to you to define the test cases. You don’t need to have a full coverage, but you need to show enough variation on the types of tests that you would need to write and execute, and what to check in the response.
-
-This kata has the purpose to evaluate both your technical skills as well as your testing skills.
-
-`For this task, you will use the booking endpoint.`
-
-
-## Requirements
-* Use Java as the programming language
-* Use Rest-Assured as the API testing library
-* Use Cucumber as the BDD framework
-* Design your codebase using a proper Java design pattern
-* Write good tests with correct checks
-* Use Git for version control and push your codebase to an open GitHub repository
-* Make regular commits to demonstrate your progress
+Scenario: Create a new booking
+Given I am authenticated
+When I send a POST request to "/booking" with valid booking details
+Then the response status code should be 201
+And the response should contain a bookingId
 
 
-## Deliverables
-* Your branch pushed in the provided project.
-* A comprehensive test suite covering the scenarios mentioned above
-* A well-structured codebase with proper design patterns and comments
-* Regular commits demonstrating your progress
-
-## Evaluation Criteria
-* Being able to successfully run the tests
-* Correctness and completeness of the test suite
-* Quality of the codebase (design patterns, structure, code quality, …)
-* Use of Rest-Assured and Cucumber features
-* Commit history and progress demonstration
