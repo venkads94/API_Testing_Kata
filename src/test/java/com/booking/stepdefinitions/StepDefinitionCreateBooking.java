@@ -1,9 +1,5 @@
 package com.booking.stepdefinitions;
 
-import java.time.LocalDate;
-import java.util.Calendar;
-import java.util.Map;
-
 import org.hamcrest.Matchers;
 import org.testng.Assert;
 
@@ -13,12 +9,12 @@ import java.sql.Date;
 
 public class StepDefinitionCreateBooking extends BaseClass {
 
-	String requestPayload;
-	String fName, lName, phoneNum, emailId, checkInDate, checkOutDate;
+	public String requestPayload;
+	public String fName, lName, phoneNum, emailId, checkInDate, checkOutDate;
 
-	// POST Create Booking
-	@When("Create payload by passing {string},{string},{string},{string},{string},{string} and call POST call")
-	public void createBooking(String firstName, String lastName, String phone, String email, String checkIn,
+	// POST Create Booking - Positive Scenario
+	@When("Create request payload by passing {string},{string},{string},{string},{string},{string}")
+	public void createRequestPayloadForCreateBooking(String firstName, String lastName, String phone, String email, String checkIn,
 			String checkOut) {
 
 		fName = firstName;
@@ -28,37 +24,23 @@ public class StepDefinitionCreateBooking extends BaseClass {
 		checkInDate = checkIn;
 		checkOutDate = checkOut;
 
-		String requestPayload = createRequestPayloadBody(firstName, lastName, phone, email, checkIn, checkOut);
-		System.out.println(requestPayload);
+		requestPayload = createRequestPayloadBody(firstName, lastName, phone, email, checkIn, checkOut);
+	}
+	
+	@When("Call POST method for create booking")
+	public void hitCreateBooking() {
 		inputRequest = RestAssured.given().cookie("token",authToken).when().body(requestPayload);
 		response = inputRequest.post("/booking");
 	}
-
-	@Then("Validate if status code is 201")
+	
+	@Then("Check if status code is 201")
 	public void validateStatusCode() {
 		response.then().assertThat().statusCode(Matchers.equalTo(201));
 		bookingId = response.jsonPath().getInt("bookingid");
 	}
 
 	// POST Create Booking - Negative Scenario
-	@When("Create payload by passing {string},{string},{string},{string},{string},{string} and call POST call for Negative Scenario")
-	public void createBookingNegativeScenario(String firstName, String lastName, String phone, String email,
-			String checkIn, String checkOut) {
-
-		fName = firstName;
-		lName = lastName;
-		phoneNum = phone;
-		emailId = email;
-		checkInDate = checkIn;
-		checkOutDate = checkOut;
-
-		String requestPayload = createRequestPayloadBody(firstName, lastName, phone, email, checkIn, checkOut);
-		System.out.println(requestPayload);
-		inputRequest = RestAssured.given().cookie(authToken).when().body(requestPayload);
-		response = inputRequest.post("/booking");
-	}
-
-	@Then("Validate if status code is 400")
+	@Then("Check if status code is 400")
 	public void validateStatusCodeNegativeScenario() {
 		response.then().assertThat().statusCode(Matchers.equalTo(400));
 		errorMsg = response.jsonPath().getString("errors");

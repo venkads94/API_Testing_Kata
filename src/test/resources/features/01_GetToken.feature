@@ -1,7 +1,7 @@
 Feature: Get Auth Token
 
 @Positivere
-Scenario Outline: Get Authentication Tokenue
+Scenario Outline: Get Authentication Token
 Given Create request payload by passing <username> and <password>
 When Send POST request with the request payload
 Then Save the token created

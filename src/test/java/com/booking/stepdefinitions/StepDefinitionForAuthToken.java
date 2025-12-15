@@ -26,7 +26,7 @@ public class StepDefinitionForAuthToken extends BaseClass {
 		response = inputRequest.post("/auth/login");
 	}
 	
-	@Then("Save th6555555e token created")
+	@Then("Save the token created")
 	public void saveAuthToken() {
 		authToken = response.jsonPath().getString("token");
 	}
