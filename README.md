@@ -39,17 +39,6 @@ It is developed in **Eclipse IDE** and targets the APIs hosted at:
 
 ---
 
-## ▶️ How to Run Tests
-1. Clone the repository:
-   ```bash
-   git clone <repo-url>
-2. Navigate to project directory:
-   cd api-automation-framework
-3. Run test using Maven:
-   mvn clean test
-4. View reports:
-   - Reports are generated under target/cucumber-reports.
-   
 Sample Feature File:
 Feature: Booking API Tests
 Scenario: Verify health check endpoint
@@ -62,5 +51,29 @@ Given I am authenticated
 When I send a POST request to "/booking" with valid booking details
 Then the response status code should be 201
 And the response should contain a bookingId
+
+## ▶️ How to Run Tests
+1. Clone the repository:
+   ```bash
+   git clone <repo-url>
+2. Navigate to project directory:
+   cd api-automation-framework
+3. Run test using Maven:
+   mvn clean test
+4. View reports:
+   - Reports are generated under target/cucumber-reports.
+   
+## Test Result:
+===============================================
+    Default test
+    Tests run: 1, Failures: 0, Skips: 0
+===============================================
+
+
+===============================================
+Default suite
+Total tests run: 15, Passes: 15, Failures: 0, Skips: 0
+
+
 
 

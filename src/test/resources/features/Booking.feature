@@ -29,6 +29,7 @@ Examples:
 |firstname|lastname|phone|email|checkin|checkout|
 |'Sub'|'Kri'|'9095553431123'|'abc@gmail.com'|'2026-02-20'|'2026-02-21'|
 |'SubhalakshmiVenkat'|'Kri'|'9095553431123'|'abc@gmail.com'|'2026-02-20'|'2026-02-21'|
+|'Sub'|'Venkadakrishnansvk'|'9095553431123'|'abc@gmail.com'|'2026-02-20'|'2026-02-21'|
 
 @Negative
 Scenario Outline: Create Booking
