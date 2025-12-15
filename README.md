@@ -39,19 +39,6 @@ It is developed in **Eclipse IDE** and targets the APIs hosted at:
 
 ---
 
-Sample Feature File:
-Feature: Booking API Tests
-Scenario: Verify health check endpoint
-Given the API is available    
-When I send a GET request to "/booking/actuator/health"
-Then the response status code should be 200
-
-Scenario: Create a new booking
-Given I am authenticated
-When I send a POST request to "/booking" with valid booking details
-Then the response status code should be 201
-And the response should contain a bookingId
-
 ## ▶️ How to Run Tests
 1. Clone the repository:
    ```bash
@@ -63,16 +50,13 @@ And the response should contain a bookingId
 4. View reports:
    - Reports are generated under target/cucumber-reports.
    
-## Test Result:
-===============================================
-    Default test
-    Tests run: 1, Failures: 0, Skips: 0
-===============================================
+## ✅ Test Execution Results
+- **Total Tests Run:** 15  
+- **Passes:** 15  
+- **Failures:** 0  
+- **Skips:** 0  
 
-
-===============================================
-Default suite
-Total tests run: 15, Passes: 15, Failures: 0, Skips: 0
+All tests executed successfully 🎉
 
 
 
