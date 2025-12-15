@@ -9,33 +9,33 @@ import io.restassured.specification.RequestSpecification;
 
 public class StepDefinitionForAuthToken extends BaseClass {
 	
-	//GET Health Check
-	@When("Call Health Check endpoint")
-	public void healthCheck() {
-		response = RestAssured.get("/booking/actuator/health");
-	}
-	@Then("Status should be UP")
-	public void checkHealthCheckStatus() {
-		String status = response.jsonPath().getString("status");
-		Assert.assertEquals(status, "UP");
-	}
+	public String requestBody;
 	
 	//POST Get Auth Token Positive Case
-	@When("Call Auth Token call by passing {string} and {string}")
-	public void getAuthToken(String uname, String pwd) {
-		String requestBody = "{"
+	@Given("Create request payload by passing {string} and {string}")
+	public void createRequestPayloadForAuthToken(String uname, String pwd) {
+		requestBody = "{"
                 + "\"username\":\"" + uname + "\","
                 + "\"password\":\"" + pwd + "\""
                 + "}";
-		System.out.println(requestBody);
+	}
+	
+	@When("Send POST request with the request payload")
+	public void assertResponseForAuthToken() {
 		inputRequest = RestAssured.given().contentType("application/json").when().body(requestBody);
 		response = inputRequest.post("/auth/login");
 	}
-	@Then("Save the token created and check if status code is 200")
-	public void assertResponseForAuthToken() {
-		response.then().assertThat().statusCode(Matchers.equalTo(200));
+	
+	@Then("Save th6555555e token created")
+	public void saveAuthToken() {
 		authToken = response.jsonPath().getString("token");
 	}
+	
+	@And("Check if status code is 200")
+	public void checkStatusCodeisPositive() {
+		response.then().assertThat().statusCode(Matchers.equalTo(200));;
+	}
+	
 	//POST Get Auth Token Negative Case
 	@Then("Check if status code is 401")
 	public void assertUnauthorizedResponseCode() {
@@ -44,3 +44,6 @@ public class StepDefinitionForAuthToken extends BaseClass {
 		Assert.assertEquals(errorMsg, "Invalid credentials");
 	}
 }
+
+
+	
