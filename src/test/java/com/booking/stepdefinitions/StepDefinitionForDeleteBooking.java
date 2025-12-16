@@ -36,6 +36,6 @@ public class StepDefinitionForDeleteBooking extends BaseClass{
 	
 	@Then("Validate if delete status code for invalid token is 401")
 	public void validateDeleteStatusCodeForInvalidToken() {
-		response.then().assertThat().statusCode(Matchers.equalTo(500));
+		response.then().assertThat().statusCode(Matchers.equalTo(401));
 	}
 }

@@ -8,10 +8,10 @@ Then Validate if status code is 200
 @Negative
 Scenario: Get Booking Details by Id with invalid token
 When Call Get Booking Details by passing invalid token
-Then Validate if status code is 403
+Then Validate if get booking status code with invalid token is 401
 
 
 @Negative
 Scenario: Get Booking Details by Id with missing token
 When Call Get Booking Details by passing missing token
-Then Validate if status code is 401
+Then Validate if get booking status code with missing token is 401

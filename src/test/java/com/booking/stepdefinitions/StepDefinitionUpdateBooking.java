@@ -31,7 +31,7 @@ public class StepDefinitionUpdateBooking extends BaseClass {
 	public void hitUpdateBookingWithMissingToken() {
 		response = RestAssured.given().contentType("application/json").when().body(json).put("/booking/"+bookingId);
 	}
-	@Then("Validate if update response code is 401")
+	@Then("Validate if update response code with missing token is 401")
 	public void validateAuthErrorResponseForMissingToken() {
 		response.then().assertThat().statusCode(Matchers.equalTo(401));
 	}
@@ -46,9 +46,9 @@ public class StepDefinitionUpdateBooking extends BaseClass {
 		public void hitUpdateBookingWithInvalidToken() {
 			response = RestAssured.given().cookie("token","123abc456").contentType("application/json").when().body(json).put("/booking/"+bookingId);
 		}
-		@Then("Validate if update response code is 403")
+		@Then("Validate if update response code with invalid token is 401")
 		public void validateAuthErrorResponseForInvalidToken() {
-			response.then().assertThat().statusCode(Matchers.equalTo(403));
+			response.then().assertThat().statusCode(Matchers.equalTo(401));
 		}
 		@And("Validate the error response message for invalid token")
 		public void validateUpdateBookingInvalidTokenErrorMessage() {

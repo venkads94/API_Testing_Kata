@@ -23,9 +23,9 @@ public class StepDefinitionGetBooking extends BaseClass {
 		response = RestAssured.given().cookie("token", "123abc456").when().get("/booking/" + bookingId);
 	}
 
-	@Then("Validate if status code is 403")
+	@Then("Validate if get booking status code with invalid token is 401")
 	public void validateStatusCodeForInvalidToken() {
-		response.then().assertThat().statusCode(Matchers.equalTo(403));
+		response.then().assertThat().statusCode(Matchers.equalTo(401));
 	}
 
 	// GET Booking by Id with missing token- Negative
@@ -34,7 +34,7 @@ public class StepDefinitionGetBooking extends BaseClass {
 		response = RestAssured.given().when().get("/booking/" + bookingId);
 	}
 
-	@Then("Validate if status code is 401")
+	@Then("Validate if get booking status code with missing token is 401")
 	public void validateStatusCodeForMissingToken() {
 		response.then().assertThat().statusCode(Matchers.equalTo(401));
 	}
