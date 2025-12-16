@@ -1,6 +1,6 @@
 Feature: Create Booking
 
-@Positive
+@positive
 Scenario Outline: Create Booking
 Given Create request payload by passing <firstname>,<lastname>,<phone>,<email>,<checkin>,<checkout>
 When Call POST method for create booking
@@ -12,7 +12,7 @@ Examples:
 |'Sub'|'Venkadakrishnansvk'|'9095553431123'|'abc@gmail.com'|'2026-02-20'|'2026-02-21'|
 |'Sub'|'Kri'|'909555343112345678901'|'abc@gmail.com'|'2026-02-20'|'2026-02-21'|
 
-@Negative
+@negative
 Scenario Outline: Create Booking
 Given Create request payload by passing <firstname>,<lastname>,<phone>,<email>,<checkin>,<checkout>
 When Call POST method for create booking

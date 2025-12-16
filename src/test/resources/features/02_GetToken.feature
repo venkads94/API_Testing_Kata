@@ -1,6 +1,6 @@
 Feature: Get Auth Token
 
-@Positivere
+@positive
 Scenario Outline: Get Authentication Token
 Given Create request payload by passing <username> and <password>
 When Send POST request with the request payload
@@ -10,7 +10,7 @@ Examples:
 |username|password|
 |'admin'|'password'|
 
-@Negative
+@negative
 Scenario Outline: Get Authentication Token Negative Scenario
 Given Create request payload by passing <username> and <password>
 When Send POST request with the request payload

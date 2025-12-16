@@ -1,6 +1,6 @@
 Feature: Update Booking
 
-@Positive
+@positive
 Scenario Outline: Update Booking Details
 Given Create request payload by passing <firstname>,<lastname>,<phone>,<email>,<checkin>,<checkout> to update booking
 When Call PUT method to update booking
@@ -9,7 +9,7 @@ Examples:
 |firstname|lastname|phone|email|checkin|checkout|
 |'Sub'|'Kri'|'9095553431123'|'abc@gmail.com'|'2026-03-20'|'2026-03-21'|
 
-@Negative
+@negative
 Scenario Outline: Update Booking Details with missing token
 Given Create request payload by passing <firstname>,<lastname>,<phone>,<email>,<checkin>,<checkout> to update booking
 When Call PUT method to update booking with missing token
@@ -19,7 +19,7 @@ Examples:
 |firstname|lastname|phone|email|checkin|checkout|
 |'Sub'|'Kri'|'909555343112309'|'abc@gmail.com'|'2026-03-20'|'2026-03-21'|
 
-@Negative
+@negative
 Scenario Outline: Update Booking Details with invalid token
 Given Create request payload by passing <firstname>,<lastname>,<phone>,<email>,<checkin>,<checkout> to update booking
 When Call PUT method to update booking with invalid token

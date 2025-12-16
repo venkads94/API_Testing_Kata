@@ -50,13 +50,18 @@ It is developed in **Eclipse IDE** and targets the APIs hosted at:
 4. View reports:
    - Reports are generated under target/cucumber-reports.
    
-## ✅ Test Execution Results
-- **Total Tests Run:** 15  
-- **Passes:** 15  
-- **Failures:** 0  
-- **Skips:** 0  
+## 🧪 Test Result Observations
 
-All tests executed successfully 🎉
+The following observations were made during API testing with invalid tokens across different endpoints. These discrepancies highlight potential issues in authentication handling or error response configuration.
+
+| Scenario                                      | Expected Status | Actual Status | Postman Status |
+|----------------------------------------------|-----------------|----------------|----------------|
+| Get Booking Details by ID with invalid token | 401 Unauthorized | 403 Forbidden  | 403 Forbidden  |
+| Update Booking Details with invalid token    | 401 Unauthorized | 403 Forbidden  | 403 Forbidden  |
+| Delete Booking by ID with invalid token      | 401 Unauthorized | 500 Internal Server Error | 500 Internal Server Error |
+
+### 🔍 Notes
+- **Rest of the tests are executed successfully 🎉
 
 
 
