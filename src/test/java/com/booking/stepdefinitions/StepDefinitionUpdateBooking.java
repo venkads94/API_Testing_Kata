@@ -9,23 +9,50 @@ import io.restassured.RestAssured;
 
 public class StepDefinitionUpdateBooking extends BaseClass {
 	
+	public String json;
+	
 	//PUT Update Booking Details by Id
-	@When("Create payload by passing {string},{string},{string},{string},{string},{string} and call PUT endpoint")
-	public void updateBookingById(String firstName, String lastName, String phone, String email, String checkIn, String checkOut) {
-		String json = updateBookingPayloadBody(firstName, lastName, phone, email, checkIn, checkOut);
+	@Given("Create request payload by passing {string},{string},{string},{string},{string},{string} to update booking")
+	public void createPayloadForUpdateBooking(String firstName, String lastName, String phone, String email, String checkIn, String checkOut) {
+		 json = updateBookingPayloadBody(firstName, lastName, phone, email, checkIn, checkOut);
 		response = RestAssured.given().cookie("token",authToken).contentType("application/json").when().body(json).put("/booking/"+bookingId);
+	}
+	@When("Call PUT method to update booking")
+	public void hitUpdateBooking() {
+		response = RestAssured.given().cookie("token",authToken).contentType("application/json").when().body(json).put("/booking/"+bookingId);
+	}
+	@Then("Validate if update response code is 200")
+	public void validateUpdateResponseCode() {
+		response.then().assertThat().statusCode(Matchers.equalTo(200));
 	}
 
 	//PUT Update Booking Details with missing token - Negative Scenario
-	@When("Create payload by passing {string},{string},{string},{string},{string},{string} and call PUT endpoint with empty token")
-	public void updateBookingWithMissingToken(String firstName, String lastName, String phone, String email, String checkIn, String checkOut) {
-		String json = updateBookingPayloadBody(firstName, lastName, phone, email, checkIn, checkOut);
+	@When("Call PUT method to update booking with missing token")
+	public void hitUpdateBookingWithMissingToken() {
 		response = RestAssured.given().contentType("application/json").when().body(json).put("/booking/"+bookingId);
 	}
-	@Then("Validate if status code is 401")
-	public void validateAuthErrorResponse() {
+	@Then("Validate if update response code is 401")
+	public void validateAuthErrorResponseForMissingToken() {
 		response.then().assertThat().statusCode(Matchers.equalTo(401));
+	}
+	@And("Validate the error response message for missing token")
+	public void validateUpdateBookingMissingTokenErrorMessage() {
 		String errorMessage = response.jsonPath().getString("error");
 		Assert.assertEquals(errorMessage, "Authentication required");
 	}
+	
+	//PUT Update Booking Details with invalid token - Negative Scenario
+		@When("Call PUT method to update booking with invalid token")
+		public void hitUpdateBookingWithInvalidToken() {
+			response = RestAssured.given().cookie("token","123abc456").contentType("application/json").when().body(json).put("/booking/"+bookingId);
+		}
+		@Then("Validate if update response code is 403")
+		public void validateAuthErrorResponseForInvalidToken() {
+			response.then().assertThat().statusCode(Matchers.equalTo(403));
+		}
+		@And("Validate the error response message for invalid token")
+		public void validateUpdateBookingInvalidTokenErrorMessage() {
+			String errorMessage = response.jsonPath().getString("error");
+			Assert.assertEquals(errorMessage, "Failed to update booking");
+		}
 }
