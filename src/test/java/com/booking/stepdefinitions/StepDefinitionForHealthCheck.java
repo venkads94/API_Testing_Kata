@@ -1,5 +1,5 @@
 package com.booking.stepdefinitions;
-import org.testng.Assert;
+import org.hamcrest.Matchers;
 import io.cucumber.java.en.*;
 import io.restassured.RestAssured;
 
@@ -12,7 +12,6 @@ public class StepDefinitionForHealthCheck extends BaseClass{
 	}
 	@Then("Response should be 200")
 	public void checkHealthCheckStatus() {
-		String status = response.jsonPath().getString("status");
-		Assert.assertEquals(status, "UP");
+		response.then().assertThat().statusCode(Matchers.equalTo(200));
 	}
 }
