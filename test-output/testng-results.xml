@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="15" passed="14" failed="1" skipped="0">
+<testng-results ignored="0" total="16" passed="16" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-12-16T08:59:50 IST" name="Default suite" finished-at="2025-12-16T09:00:25 IST" duration-ms="34124">
+  <suite started-at="2025-12-16T09:28:10 IST" name="Default suite" finished-at="2025-12-16T09:28:43 IST" duration-ms="32800">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@66f57048]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2025-12-16T08:59:50 IST" name="Default test" finished-at="2025-12-16T09:00:25 IST" duration-ms="34124">
+    <test started-at="2025-12-16T09:28:10 IST" name="Default test" finished-at="2025-12-16T09:28:43 IST" duration-ms="32800">
       <class name="runner.TestRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:runner.TestRunner@66f57048]" started-at="2025-12-16T08:59:50 IST" name="setUpClass" finished-at="2025-12-16T08:59:54 IST" duration-ms="3913" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:runner.TestRunner@66f57048]" started-at="2025-12-16T09:28:10 IST" name="setUpClass" finished-at="2025-12-16T09:28:12 IST" duration-ms="2014" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@236a4d30]]>
+                <![CDATA[org.testng.TestRunner@16ef1160]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@66f57048]" started-at="2025-12-16T08:59:54 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-12-16T09:00:08 IST" duration-ms="13338" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@66f57048]" started-at="2025-12-16T09:28:12 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-12-16T09:28:22 IST" duration-ms="9553" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -37,7 +37,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@66f57048]" started-at="2025-12-16T09:00:08 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-12-16T09:00:09 IST" duration-ms="847" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@66f57048]" started-at="2025-12-16T09:28:22 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-12-16T09:28:23 IST" duration-ms="940" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -53,7 +53,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@66f57048]" started-at="2025-12-16T09:00:09 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-12-16T09:00:10 IST" duration-ms="908" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@66f57048]" started-at="2025-12-16T09:28:23 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-12-16T09:28:23 IST" duration-ms="581" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -69,62 +69,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@66f57048]" started-at="2025-12-16T09:00:10 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-12-16T09:00:10 IST" duration-ms="630" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Create Booking"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[Create Booking]"]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[1 expectation failed.
-Expected status code <201> but was <502>.
-]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: 1 expectation failed.
-Expected status code <201> but was <502>.
-
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
-at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:108)
-at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:57)
-at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
-at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
-at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:512)
-at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
-at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:696)
-at io.restassured.internal.ResponseSpecificationImpl.this$2$validateResponseIfRequired(ResponseSpecificationImpl.groovy)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
-at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:198)
-at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:62)
-at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
-at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:135)
-at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:84)
-at com.booking.stepdefinitions.StepDefinitionCreateBooking.validateStatusCode(StepDefinitionCreateBooking.java:38)
-at ✽.Check if status code is 201(file:///C:/Users/Dell/Kata/API_Testing_kata/src/test/resources/features/02_CreateBooking.feature:7)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@66f57048]" started-at="2025-12-16T09:00:10 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-12-16T09:00:12 IST" duration-ms="1304" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@66f57048]" started-at="2025-12-16T09:28:23 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-12-16T09:28:25 IST" duration-ms="2221" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -140,7 +85,7 @@ at ✽.Check if status code is 201(file:///C:/Users/Dell/Kata/API_Testing_kata/s
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@66f57048]" started-at="2025-12-16T09:00:12 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-12-16T09:00:12 IST" duration-ms="706" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@66f57048]" started-at="2025-12-16T09:28:25 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-12-16T09:28:27 IST" duration-ms="1551" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -156,7 +101,7 @@ at ✽.Check if status code is 201(file:///C:/Users/Dell/Kata/API_Testing_kata/s
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@66f57048]" started-at="2025-12-16T09:00:12 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-12-16T09:00:13 IST" duration-ms="650" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@66f57048]" started-at="2025-12-16T09:28:27 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-12-16T09:28:28 IST" duration-ms="687" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -172,7 +117,7 @@ at ✽.Check if status code is 201(file:///C:/Users/Dell/Kata/API_Testing_kata/s
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@66f57048]" started-at="2025-12-16T09:00:13 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-12-16T09:00:14 IST" duration-ms="761" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@66f57048]" started-at="2025-12-16T09:28:28 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-12-16T09:28:28 IST" duration-ms="617" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -188,7 +133,7 @@ at ✽.Check if status code is 201(file:///C:/Users/Dell/Kata/API_Testing_kata/s
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@66f57048]" started-at="2025-12-16T09:00:14 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-12-16T09:00:14 IST" duration-ms="432" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@66f57048]" started-at="2025-12-16T09:28:28 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-12-16T09:28:29 IST" duration-ms="852" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -204,7 +149,23 @@ at ✽.Check if status code is 201(file:///C:/Users/Dell/Kata/API_Testing_kata/s
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@66f57048]" started-at="2025-12-16T09:00:14 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-12-16T09:00:15 IST" duration-ms="774" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@66f57048]" started-at="2025-12-16T09:28:29 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-12-16T09:28:30 IST" duration-ms="450" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Create Booking"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Create Booking]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@66f57048]" started-at="2025-12-16T09:28:30 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-12-16T09:28:31 IST" duration-ms="966" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -220,11 +181,11 @@ at ✽.Check if status code is 201(file:///C:/Users/Dell/Kata/API_Testing_kata/s
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@66f57048]" started-at="2025-12-16T09:00:15 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-12-16T09:00:15 IST" duration-ms="402" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@66f57048]" started-at="2025-12-16T09:28:31 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-12-16T09:28:31 IST" duration-ms="494" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Get Booking Details by Id Negative Scenario"]]>
+                <![CDATA["Get Booking Details by Id with invalid token"]]>
               </value>
             </param>
             <param index="1">
@@ -236,7 +197,23 @@ at ✽.Check if status code is 201(file:///C:/Users/Dell/Kata/API_Testing_kata/s
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@66f57048]" started-at="2025-12-16T09:00:15 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-12-16T09:00:16 IST" duration-ms="1003" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@66f57048]" started-at="2025-12-16T09:28:31 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-12-16T09:28:32 IST" duration-ms="570" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Get Booking Details by Id with missing token"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Get Booking]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@66f57048]" started-at="2025-12-16T09:28:32 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-12-16T09:28:33 IST" duration-ms="1057" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -252,7 +229,7 @@ at ✽.Check if status code is 201(file:///C:/Users/Dell/Kata/API_Testing_kata/s
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@66f57048]" started-at="2025-12-16T09:00:16 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-12-16T09:00:17 IST" duration-ms="820" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@66f57048]" started-at="2025-12-16T09:28:33 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-12-16T09:28:34 IST" duration-ms="1262" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -268,7 +245,7 @@ at ✽.Check if status code is 201(file:///C:/Users/Dell/Kata/API_Testing_kata/s
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@66f57048]" started-at="2025-12-16T09:00:17 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-12-16T09:00:18 IST" duration-ms="839" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@66f57048]" started-at="2025-12-16T09:28:34 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-12-16T09:28:35 IST" duration-ms="1395" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -284,7 +261,7 @@ at ✽.Check if status code is 201(file:///C:/Users/Dell/Kata/API_Testing_kata/s
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@66f57048]" started-at="2025-12-16T09:00:18 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-12-16T09:00:20 IST" duration-ms="1797" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@66f57048]" started-at="2025-12-16T09:28:35 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-12-16T09:28:37 IST" duration-ms="1529" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -300,7 +277,7 @@ at ✽.Check if status code is 201(file:///C:/Users/Dell/Kata/API_Testing_kata/s
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:runner.TestRunner@66f57048]" started-at="2025-12-16T09:00:20 IST" name="tearDownClass" finished-at="2025-12-16T09:00:25 IST" duration-ms="4767" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:runner.TestRunner@66f57048]" started-at="2025-12-16T09:28:37 IST" name="tearDownClass" finished-at="2025-12-16T09:28:43 IST" duration-ms="5935" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

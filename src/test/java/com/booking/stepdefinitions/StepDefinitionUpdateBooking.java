@@ -11,7 +11,7 @@ public class StepDefinitionUpdateBooking extends BaseClass {
 	
 	public String json;
 	
-	//PUT Update Booking Details by Id
+	//PUT Update Booking Details by Id - Positive Scenario
 	@Given("Create request payload by passing {string},{string},{string},{string},{string},{string} to update booking")
 	public void createPayloadForUpdateBooking(String firstName, String lastName, String phone, String email, String checkIn, String checkOut) {
 		 json = updateBookingPayloadBody(firstName, lastName, phone, email, checkIn, checkOut);
