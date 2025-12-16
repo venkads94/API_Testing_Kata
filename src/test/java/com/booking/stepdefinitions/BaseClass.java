@@ -20,7 +20,7 @@ public class BaseClass {
 		bookingDates.put("checkout", checkout);
 
 		Map<String, Object> requestBody = new HashMap<>();
-		int random = (int) (Math.random() * 900) + 100;
+		int random = (int) (Math.random() * 9000) + 1000;
 		requestBody.put("roomid", random);
 		requestBody.put("depositpaid", true);
 		requestBody.put("firstname", firstname);
@@ -36,7 +36,7 @@ public class BaseClass {
 
 	public String updateBookingPayloadBody(String firstname, String lastname, String phone, String email,
 			String checkin, String checkout) {
-		String json = "{" + "\"roomid\":900," + "\"depositpaid\":true," + "\"firstname\":\"" + firstname + "\","
+		String json = "{" + "\"roomid\":9010," + "\"depositpaid\":true," + "\"firstname\":\"" + firstname + "\","
 				+ "\"lastname\":\"" + lastname + "\"," + "\"email\":\"" + email + "\","
 				+ "\"phone\":\"90955567378212\"," + "\"bookingdates\":{" + "\"checkin\":\"" + checkin + "\","
 				+ "\"checkout\":\"" + checkout + "\"" + "}" + "}";
