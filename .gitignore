@@ -17,7 +17,6 @@ target/
 .settings
 .springBeans
 .sts4-cache
-.test-output/
 
 
 ### NetBeans ###
@@ -36,3 +35,6 @@ build/
 ### Mac OS ###
 .DS_Store
 /test-output/
+
+# Ignore TestNG output
+test-output/
