@@ -1,11 +1,9 @@
 package com.booking.stepdefinitions;
-
+import com.booking.config.BaseClass;
 import org.hamcrest.Matchers;
 import org.testng.Assert;
 import io.cucumber.java.en.*;
 import io.restassured.RestAssured;
-import io.restassured.response.Response;
-import io.restassured.specification.RequestSpecification;
 
 public class StepDefinitionForAuthToken extends BaseClass {
 	

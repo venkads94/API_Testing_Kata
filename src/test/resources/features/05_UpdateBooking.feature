@@ -13,7 +13,7 @@ Examples:
 Scenario Outline: Update Booking Details with missing token
 Given Create request payload by passing <firstname>,<lastname>,<phone>,<email>,<checkin>,<checkout> to update booking
 When Call PUT method to update booking with missing token
-Then Validate if update response code with missing token is 401
+Then Validate if response status code is 401
 And Validate the error response message for missing token
 Examples:
 |firstname|lastname|phone|email|checkin|checkout|
@@ -23,7 +23,7 @@ Examples:
 Scenario Outline: Update Booking Details with invalid token
 Given Create request payload by passing <firstname>,<lastname>,<phone>,<email>,<checkin>,<checkout> to update booking
 When Call PUT method to update booking with invalid token
-Then Validate if update response code with invalid token is 401
+Then Validate if response status code is 401
 And Validate the error response message for invalid token
 Examples:
 |firstname|lastname|phone|email|checkin|checkout|

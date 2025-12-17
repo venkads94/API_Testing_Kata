@@ -1,4 +1,4 @@
-package com.booking.stepdefinitions;
+package com.booking.config;
 
 import io.cucumber.java.Before;
 import io.cucumber.java.After;
@@ -17,7 +17,7 @@ public class HookClass {
 		}
 	}
 	
-	@Before
+	@Before(order=1)
 	@Given("Set value of base uri")
 	public void declareBaseURI() {
 		RestAssured.baseURI = "https://automationintesting.online/api";

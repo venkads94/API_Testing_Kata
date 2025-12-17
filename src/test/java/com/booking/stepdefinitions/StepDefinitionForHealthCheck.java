@@ -1,4 +1,5 @@
 package com.booking.stepdefinitions;
+import com.booking.config.BaseClass;
 import org.hamcrest.Matchers;
 import io.cucumber.java.en.*;
 import io.restassured.RestAssured;

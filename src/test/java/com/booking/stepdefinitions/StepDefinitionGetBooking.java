@@ -1,5 +1,6 @@
 package com.booking.stepdefinitions;
 
+import com.booking.config.BaseClass;
 import org.hamcrest.Matchers;
 import io.cucumber.java.en.*;
 import io.restassured.RestAssured;
@@ -23,7 +24,7 @@ public class StepDefinitionGetBooking extends BaseClass {
 		response = RestAssured.given().cookie("token", "123abc456").when().get("/booking/" + bookingId);
 	}
 
-	@Then("Validate if get booking status code with invalid token is 401")
+	@Then("Validate if response status code is 401")
 	public void validateStatusCodeForInvalidToken() {
 		response.then().assertThat().statusCode(Matchers.equalTo(401));
 	}
@@ -32,10 +33,5 @@ public class StepDefinitionGetBooking extends BaseClass {
 	@When("Call Get Booking Details by passing missing token")
 	public void getBookingByMissingToken() {
 		response = RestAssured.given().when().get("/booking/" + bookingId);
-	}
-
-	@Then("Validate if get booking status code with missing token is 401")
-	public void validateStatusCodeForMissingToken() {
-		response.then().assertThat().statusCode(Matchers.equalTo(401));
 	}
 }

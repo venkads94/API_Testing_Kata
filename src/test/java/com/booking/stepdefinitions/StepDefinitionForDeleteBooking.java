@@ -1,5 +1,6 @@
 package com.booking.stepdefinitions;
 
+import com.booking.config.BaseClass;
 import org.hamcrest.Matchers;
 
 import io.cucumber.java.en.*;
@@ -22,20 +23,10 @@ public class StepDefinitionForDeleteBooking extends BaseClass{
 	public void deleteBookingWithMissingToken() {
 		response = RestAssured.given().when().delete("/booking/" + bookingId);
 	}
-
-	@Then("Validate if delete status code for missing token is 401")
-	public void validateDeleteStatusCodeForMissingToken() {
-		response.then().assertThat().statusCode(Matchers.equalTo(401));
-	}
 	
 	// Delete Booking with invalid token- Negative
 	@When("Call Delete Booking Details with invalid token")
 	public void deleteBookingByInvalidToken() {
 		response = RestAssured.given().cookie("token", "123abc456").when().delete("/booking/" + bookingId);
-	}
-	
-	@Then("Validate if delete status code for invalid token is 401")
-	public void validateDeleteStatusCodeForInvalidToken() {
-		response.then().assertThat().statusCode(Matchers.equalTo(401));
 	}
 }

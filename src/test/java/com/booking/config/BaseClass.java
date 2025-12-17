@@ -1,4 +1,4 @@
-package com.booking.stepdefinitions;
+package com.booking.config;
 
 import java.util.*;
 

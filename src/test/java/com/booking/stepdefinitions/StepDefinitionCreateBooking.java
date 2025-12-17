@@ -3,6 +3,8 @@ package com.booking.stepdefinitions;
 import org.hamcrest.Matchers;
 import org.testng.Assert;
 
+import com.booking.config.BaseClass;
+
 import io.cucumber.java.en.*;
 import io.restassured.RestAssured;
 import java.sql.Date;
